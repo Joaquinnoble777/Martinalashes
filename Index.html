@@ -140,9 +140,9 @@
         <h2>Portfolio</h2>
         <p class="small">Algunas realizaciones y estilos. Puedo presentar portafolio completo en entrevista.</p>
         <div class="grid" style="margin-top:16px">
-          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=60" alt="pestañas 1" style="width:100%;height:160px;object-fit:cover;border-radius:10px"/>
-          <img src="https://images.unsplash.com/photo-1533229324982-6a5c5b3a8af2?auto=format&fit=crop&w=600&q=60" alt="pestañas 2" style="width:100%;height:160px;object-fit:cover;border-radius:10px"/>
-          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=60" alt="pestañas 3" style="width:100%;height:160px;object-fit:cover;border-radius:10px"/>
+          
+          
+          
         </div>
       </div>
     </section>
@@ -160,17 +160,12 @@
     <section id="contacto" class="contact">
       <div>
         <h2>Contacto</h2>
-        <form onsubmit="handleForm(event)">
-          <div class="field"><label>Nombre</label><input id="name" placeholder="Tu nombre" required></div>
-          <div class="field"><label>Teléfono / WhatsApp</label><input id="phone" placeholder="Ej: +598 9X XXX XXX" required></div>
-          <div class="field"><label>Consulta</label><textarea id="message" placeholder="Cuéntame qué te gustaría" required></textarea></div>
-          <div style="display:flex;gap:10px;align-items:center"><button type="submit" class="btn btn-primary">Enviar por WhatsApp</button><div style="color:var(--muted);font-size:13px">O llamá al <strong>+598 97 764 881</strong></div></div>
-        </form>
+        <form onsubmit="handleForm(event)">\n          <div class="field"><label>Nombre</label><input id="name" placeholder="Tu nombre" required></div>\n          <div class="field"><label>Teléfono / WhatsApp</label><input id="phone" placeholder="Ej: +598 9X XXX XXX" required></div>\n          <div class="field"><label>Servicio</label>\n            <select id="service" required style="padding:10px;border-radius:8px;border:1px solid #e6e6e6">\n              <option value="Extensión clásica">Extensión clásica</option>\n              <option value="Volumen ruso">Volumen ruso</option>\n              <option value="Cat-eye / Diseño personalizado">Cat-eye / Diseño personalizado</option>\n              <option value="Retoque / Mantenimiento">Retoque / Mantenimiento</option>\n            </select>\n          </div>\n          <div class="field"><label>Fecha preferida</label><input id="date" type="date" required></div>\n          <div class="field"><label>Hora preferida</label><input id="time" type="time" required></div>\n          <div class="field"><label>Comentario</label><textarea id="message" placeholder="Algo que quieras contar (alergias, preferencias...)" required></textarea></div>\n          <div style="display:flex;gap:10px;align-items:center"><button type="submit" class="btn btn-primary">Enviar solicitud por WhatsApp</button><div style="color:var(--muted);font-size:13px">O llamá al <strong>+598 98 943 201</strong></div></div>\n        </form>
       </div>
       <aside class="contact-card">
         <h3>Perfect Glance</h3>
         <p style="margin:8px 0">Martina — Especialista en extensiones</p>
-        <p style="margin:6px 0;font-weight:700">+598 97 764 881</p>
+        <p style="margin:6px 0;font-weight:700">+598 98 943 201</p>
         <p style="margin:6px 0">@perfectglance</p>
         <div style="margin-top:12px"><a href="https://www.instagram.com/perfectglance" target="_blank" style="color:white;text-decoration:none">Ver Instagram <i class="fa-brands fa-instagram"></i></a></div>
       </aside>
@@ -187,7 +182,7 @@
 
   <script>
     function openWhatsApp(){
-      const number = '+59897764881';
+      const number = '+59898943201';
       const text = encodeURIComponent('Hola, quiero reservar turno para extensiones de pestañas.\nNombre: \nPreferencia de servicio:');
       window.open('https://wa.me/' + number.replace(/[^0-9]/g,'') + '?text=' + text,'_blank')
     }
@@ -196,7 +191,7 @@
       const name = document.getElementById('name').value.trim();
       const phone = document.getElementById('phone').value.trim();
       const msg = document.getElementById('message').value.trim();
-      const number = '+59897764881'.replace(/[^0-9]/g,'');
+      const number = '+59898943201'.replace(/[^0-9]/g,'');
       const text = encodeURIComponent(`Hola, soy ${name}. ${phone ? 'Mi teléfono: '+phone+'. ' : ''}${msg}`);
       window.open('https://wa.me/' + number + '?text=' + text,'_blank')
     }
