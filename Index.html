@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Perfect Glance — Extensiones de Pestañas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <style>
+    :root{
+      --bg: #ffffff;
+      --pink: #ff8fb1; /* rosa */
+      --violet: #7b3fb5; /* violeta */
+      --soft-violet: #a889d9;
+      --muted: #777;
+      --radius: 14px;
+      --container: 1100px;
+    }
+    *{box-sizing:border-box}
+    body{font-family: 'Montserrat', Arial, sans-serif; margin:0; background:var(--bg); color:#222; -webkit-font-smoothing:antialiased}
+    .container{max-width:var(--container); margin:0 auto; padding:28px}
+
+    /* Hero */
+    .hero{display:flex; align-items:center; gap:40px; padding:60px 0}
+    .hero-left{flex:1}
+    .eyebadge{display:inline-block;padding:8px 14px;border-radius:999px;background:linear-gradient(90deg,var(--pink),var(--soft-violet));color:white;font-weight:600;margin-bottom:18px}
+    h1{font-size:44px;line-height:1.05;margin:0 0 14px}
+    p.lead{font-size:18px;color:var(--muted);margin:0 0 22px}
+    .cta-row{display:flex;gap:12px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+    .btn-primary{background:linear-gradient(90deg,var(--violet),var(--pink));color:white;box-shadow:0 6px 18px rgba(123,63,181,0.18)}
+    .btn-outline{background:transparent;border:2px solid var(--violet);color:var(--violet)}
+
+    .hero-right{flex:1;display:flex;justify-content:center}
+    .card-preview{width:320px;height:460px;border-radius:20px;background:linear-gradient(180deg,rgba(123,63,181,0.12),rgba(255,143,177,0.06));box-shadow:0 10px 30px rgba(0,0,0,0.07);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px}
+    .profile-img{width:180px;height:180px;border-radius:50%;background:linear-gradient(90deg,var(--pink),var(--violet));display:flex;align-items:center;justify-content:center;color:white;font-size:22px;font-weight:700}
+    .small{font-size:14px;color:var(--muted)}
+
+    /* Services */
+    .services{padding:40px 0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .service{background:white;border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(120,90,160,0.06);border:1px solid rgba(124,85,167,0.06)}
+    .service h3{margin:8px 0 6px;font-size:18px}
+    .caps{font-size:12px;color:var(--violet);font-weight:700}
+
+    /* About */
+    .about{display:flex;gap:26px;align-items:center;padding:40px 0}
+    .about img{width:280px;height:auto;border-radius:12px;object-fit:cover;box-shadow:0 8px 30px rgba(0,0,0,0.08)}
+
+    /* Testimonials */
+    .testimonials{background:linear-gradient(90deg,rgba(123,63,181,0.04),rgba(255,143,177,0.03));padding:36px;border-radius:16px}
+    .testimonial{padding:18px;border-radius:10px;background:white;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1fr 360px;gap:20px;padding:40px 0}
+    form{background:white;padding:20px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.05)}
+    .field{display:flex;flex-direction:column;margin-bottom:12px}
+    input, textarea{padding:10px;border-radius:8px;border:1px solid #e6e6e6;font-size:14px}
+    textarea{min-height:120px;resize:vertical}
+    .contact-card{background:linear-gradient(180deg,var(--pink),var(--soft-violet));color:white;padding:20px;border-radius:12px;text-align:center}
+
+    footer{padding:28px 0;border-top:1px solid #f0edf7;color:var(--muted);font-size:14px}
+
+    @media (max-width:900px){
+      .hero{flex-direction:column;text-align:center}
+      .hero-right{order:-1}
+      .contact{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="width:56px;height:56px;border-radius:12px;background:linear-gradient(90deg,var(--pink),var(--violet));display:flex;align-items:center;justify-content:center;color:white;font-weight:700">PG</div>
+        <div>
+          <div style="font-weight:700">Perfect Glance</div>
+          <div style="font-size:12px;color:var(--muted)">Extensiones de pestañas profesionales</div>
+        </div>
+      </div>
+      <nav style="display:flex;gap:14px;align-items:center">
+        <a href="#servicios" style="color:var(--violet);font-weight:600;text-decoration:none">Servicios</a>
+        <a href="#portfolio" style="color:var(--muted);text-decoration:none">Portfolio</a>
+        <a href="#contacto" style="color:var(--muted);text-decoration:none">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <span class="eyebadge">Extensiones & Volúmenes</span>
+        <h1>Realza la mirada con elegancia y cuidado</h1>
+        <p class="lead">Soy Martina, técnica especializada en extensiones de pestañas. Ofrezco diseños personalizados, técnicas seguras y resultados duraderos respetando siempre la salud natural del párpado.</p>
+        <div class="cta-row">
+          <button class="btn btn-primary" onclick="openWhatsApp()"><i class="fa-brands fa-whatsapp"></i> Reservar turno</button>
+          <a class="btn btn-outline" href="#portfolio">Ver portfolio</a>
+        </div>
+        <div style="margin-top:16px;color:var(--muted);font-size:14px">Atención personalizada, protocolo higiénico y materiales premium.</div>
+      </div>
+      <div class="hero-right">
+        <div class="card-preview">
+          <div class="profile-img">Martina</div>
+          <div style="margin-top:18px;text-align:center">
+            <div style="font-weight:700">Especialista en Extensiones</div>
+            <div class="small">Diseños clásicos, cat-eye y volumen ruso</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios" class="services">
+      <div style="display:flex;justify-content:space-between;align-items:end"><h2>Servicios</h2><div style="color:var(--muted)">Tratamientos con foco en salud y resultado</div></div>
+      <div class="grid" style="margin-top:18px">
+        <div class="service">
+          <div class="caps">CLÁSICO</div>
+          <h3>Extensión clásica</h3>
+          <p class="small">Look natural, ideal para quienes buscan definición sin volumen extra.</p>
+        </div>
+        <div class="service">
+          <div class="caps">VOLUMEN</div>
+          <h3>Volumen ruso</h3>
+          <p class="small">Fácil de adaptar: desde volumen ligero hasta dramatic look, cuidando el peso sobre la pestaña natural.</p>
+        </div>
+        <div class="service">
+          <div class="caps">DISEÑO</div>
+          <h3>Cateye & Diseño personalizado</h3>
+          <p class="small">Trabajos a medida según forma del ojo y preferencias de la clienta.</p>
+        </div>
+        <div class="service">
+          <div class="caps">MANTENIMIENTOS</div>
+          <h3>Retoques y consultas</h3>
+          <p class="small">Servicio de colocación y mantenimiento para prolongar el resultado.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="about">
+      <div>
+        <h2>Portfolio</h2>
+        <p class="small">Algunas realizaciones y estilos. Puedo presentar portafolio completo en entrevista.</p>
+        <div class="grid" style="margin-top:16px">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=60" alt="pestañas 1" style="width:100%;height:160px;object-fit:cover;border-radius:10px"/>
+          <img src="https://images.unsplash.com/photo-1533229324982-6a5c5b3a8af2?auto=format&fit=crop&w=600&q=60" alt="pestañas 2" style="width:100%;height:160px;object-fit:cover;border-radius:10px"/>
+          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=60" alt="pestañas 3" style="width:100%;height:160px;object-fit:cover;border-radius:10px"/>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top:24px">
+      <div class="testimonials">
+        <h3>Testimonios</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:12px">
+          <div class="testimonial">“Excelente atención, mis pestañas nunca lucieron tan naturales.”<div style="margin-top:8px;font-size:13px;color:var(--muted)">— Lucía</div></div>
+          <div class="testimonial">“Duración y confort. Recomendada 100%.”<div style="margin-top:8px;font-size:13px;color:var(--muted)">— Ana</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="contact">
+      <div>
+        <h2>Contacto</h2>
+        <form onsubmit="handleForm(event)">
+          <div class="field"><label>Nombre</label><input id="name" placeholder="Tu nombre" required></div>
+          <div class="field"><label>Teléfono / WhatsApp</label><input id="phone" placeholder="Ej: +598 9X XXX XXX" required></div>
+          <div class="field"><label>Consulta</label><textarea id="message" placeholder="Cuéntame qué te gustaría" required></textarea></div>
+          <div style="display:flex;gap:10px;align-items:center"><button type="submit" class="btn btn-primary">Enviar por WhatsApp</button><div style="color:var(--muted);font-size:13px">O llamá al <strong>+598 97 764 881</strong></div></div>
+        </form>
+      </div>
+      <aside class="contact-card">
+        <h3>Perfect Glance</h3>
+        <p style="margin:8px 0">Martina — Especialista en extensiones</p>
+        <p style="margin:6px 0;font-weight:700">+598 97 764 881</p>
+        <p style="margin:6px 0">@perfectglance</p>
+        <div style="margin-top:12px"><a href="https://www.instagram.com/perfectglance" target="_blank" style="color:white;text-decoration:none">Ver Instagram <i class="fa-brands fa-instagram"></i></a></div>
+      </aside>
+    </section>
+
+  </main>
+
+  <footer class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+      <div>© <strong>Perfect Glance</strong> — Extensiones de pestañas</div>
+      <div style="color:var(--muted);font-size:13px">Diseño por Perfect Glance</div>
+    </div>
+  </footer>
+
+  <script>
+    function openWhatsApp(){
+      const number = '+59897764881';
+      const text = encodeURIComponent('Hola, quiero reservar turno para extensiones de pestañas.\nNombre: \nPreferencia de servicio:');
+      window.open('https://wa.me/' + number.replace(/[^0-9]/g,'') + '?text=' + text,'_blank')
+    }
+    function handleForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      const number = '+59897764881'.replace(/[^0-9]/g,'');
+      const text = encodeURIComponent(`Hola, soy ${name}. ${phone ? 'Mi teléfono: '+phone+'. ' : ''}${msg}`);
+      window.open('https://wa.me/' + number + '?text=' + text,'_blank')
+    }
+  </script>
+</body>
+</html>
