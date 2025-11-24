@@ -4,101 +4,123 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Perfect Glance — Extensiones de Pestañas</title>
+  <meta name="description" content="Perfect Glance — Extensiones de pestañas profesionales. Reserva tu turno por WhatsApp.">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
   <style>
     :root{
       --bg: #ffffff;
-      --pink: #ff8fb1; /* rosa */
-      --violet: #7b3fb5; /* violeta */
+      --pink: #ff8fb1;
+      --violet: #7b3fb5;
       --soft-violet: #a889d9;
       --muted: #777;
       --radius: 14px;
       --container: 1100px;
+      --max-width-hero: 1100px;
     }
     *{box-sizing:border-box}
-    body{font-family: 'Montserrat', Arial, sans-serif; margin:0; background:var(--bg); color:#222; -webkit-font-smoothing:antialiased}
+    html,body{height:100%}
+    body{font-family: 'Montserrat', Arial, sans-serif; margin:0; background:var(--bg); color:#222; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
     .container{max-width:var(--container); margin:0 auto; padding:28px}
 
+    header{padding-top:6px;padding-bottom:6px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo-pill{width:56px;height:56px;border-radius:12px;background:linear-gradient(90deg,var(--pink),var(--violet));display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav a{font-weight:600;text-decoration:none}
+    nav a:hover{opacity:0.9}
+
     /* Hero */
-    .hero{display:flex; align-items:center; gap:40px; padding:60px 0}
-    .hero-left{flex:1}
-    .eyebadge{display:inline-block;padding:8px 14px;border-radius:999px;background:linear-gradient(90deg,var(--pink),var(--soft-violet));color:white;font-weight:600;margin-bottom:18px}
-    h1{font-size:44px;line-height:1.05;margin:0 0 14px}
-    p.lead{font-size:18px;color:var(--muted);margin:0 0 22px}
-    .cta-row{display:flex;gap:12px}
+    .hero{display:flex; align-items:center; gap:40px; padding:42px 0 20px}
+    .hero-left{flex:1;min-width:260px}
+    .eyebadge{display:inline-block;padding:8px 14px;border-radius:999px;background:linear-gradient(90deg,var(--pink),var(--soft-violet));color:white;font-weight:600;margin-bottom:14px}
+    h1{font-size:40px;line-height:1.05;margin:6px 0 12px}
+    p.lead{font-size:17px;color:var(--muted);margin:0 0 18px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
     .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
     .btn-primary{background:linear-gradient(90deg,var(--violet),var(--pink));color:white;box-shadow:0 6px 18px rgba(123,63,181,0.18)}
     .btn-outline{background:transparent;border:2px solid var(--violet);color:var(--violet)}
 
-    .hero-right{flex:1;display:flex;justify-content:center}
+    .hero-right{flex:1;display:flex;justify-content:center;min-width:280px}
     .card-preview{width:320px;height:460px;border-radius:20px;background:linear-gradient(180deg,rgba(123,63,181,0.12),rgba(255,143,177,0.06));box-shadow:0 10px 30px rgba(0,0,0,0.07);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px}
     .profile-img{width:180px;height:180px;border-radius:50%;background:linear-gradient(90deg,var(--pink),var(--violet));display:flex;align-items:center;justify-content:center;color:white;font-size:22px;font-weight:700}
     .small{font-size:14px;color:var(--muted)}
 
     /* Services */
-    .services{padding:40px 0}
+    .services{padding:28px 0}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
     .service{background:white;border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(120,90,160,0.06);border:1px solid rgba(124,85,167,0.06)}
     .service h3{margin:8px 0 6px;font-size:18px}
     .caps{font-size:12px;color:var(--violet);font-weight:700}
+    .price{margin-top:8px;font-weight:700;color:var(--violet);font-size:16px}
 
-    /* About */
-    .about{display:flex;gap:26px;align-items:center;padding:40px 0}
+    /* About / Portfolio */
+    .about{display:flex;gap:26px;align-items:center;padding:20px 0}
     .about img{width:280px;height:auto;border-radius:12px;object-fit:cover;box-shadow:0 8px 30px rgba(0,0,0,0.08)}
 
     /* Testimonials */
-    .testimonials{background:linear-gradient(90deg,rgba(123,63,181,0.04),rgba(255,143,177,0.03));padding:36px;border-radius:16px}
-    .testimonial{padding:18px;border-radius:10px;background:white;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+    .testimonials{background:linear-gradient(90deg,rgba(123,63,181,0.04),rgba(255,143,177,0.03));padding:24px;border-radius:16px}
+    .testimonial{padding:14px;border-radius:10px;background:white;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
 
     /* Contact */
-    .contact{display:grid;grid-template-columns:1fr 360px;gap:20px;padding:40px 0}
-    form{background:white;padding:20px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.05)}
+    .contact{display:grid;grid-template-columns:1fr 360px;gap:20px;padding:28px 0}
+    form{background:white;padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.05)}
     .field{display:flex;flex-direction:column;margin-bottom:12px}
-    input, textarea{padding:10px;border-radius:8px;border:1px solid #e6e6e6;font-size:14px}
+    label{font-size:13px;margin-bottom:6px;color:#333}
+    input, textarea, select{padding:10px;border-radius:8px;border:1px solid #e6e6e6;font-size:14px}
     textarea{min-height:120px;resize:vertical}
-    .contact-card{background:linear-gradient(180deg,var(--pink),var(--soft-violet));color:white;padding:20px;border-radius:12px;text-align:center}
+    .contact-card{background:linear-gradient(180deg,var(--pink),var(--soft-violet));color:white;padding:18px;border-radius:12px;text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center}
 
-    footer{padding:28px 0;border-top:1px solid #f0edf7;color:var(--muted);font-size:14px}
+    .map-embed{width:100%;height:200px;border-radius:10px;border:0;overflow:hidden}
+
+    footer{padding:22px 0;border-top:1px solid #f0edf7;color:var(--muted);font-size:14px}
+
+    /* utilities */
+    .muted{color:var(--muted)}
+    .gap-8{height:8px}
+    .service-desc{color:var(--muted);font-size:14px;margin-top:6px}
 
     @media (max-width:900px){
       .hero{flex-direction:column;text-align:center}
       .hero-right{order:-1}
       .contact{grid-template-columns:1fr}
+      .card-preview{width:260px;height:420px}
+      h1{font-size:32px}
     }
   </style>
 </head>
 <body>
-  <header class="container">
-    <div style="display:flex;justify-content:space-between;align-items:center">
+  <header class="container" role="banner">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
       <div style="display:flex;align-items:center;gap:12px">
-        <div style="width:56px;height:56px;border-radius:12px;background:linear-gradient(90deg,var(--pink),var(--violet));display:flex;align-items:center;justify-content:center;color:white;font-weight:700">PG</div>
+        <div class="logo-pill" aria-hidden="true">PG</div>
         <div>
           <div style="font-weight:700">Perfect Glance</div>
           <div style="font-size:12px;color:var(--muted)">Extensiones de pestañas profesionales</div>
         </div>
       </div>
-      <nav style="display:flex;gap:14px;align-items:center">
-        <a href="#servicios" style="color:var(--violet);font-weight:600;text-decoration:none">Servicios</a>
-        <a href="#portfolio" style="color:var(--muted);text-decoration:none">Portfolio</a>
-        <a href="#contacto" style="color:var(--muted);text-decoration:none">Contacto</a>
+      <nav style="display:flex;gap:14px;align-items:center" aria-label="Menú principal">
+        <a href="#servicios" style="color:var(--violet)">Servicios</a>
+        <a href="#portfolio" style="color:var(--muted)">Portfolio</a>
+        <a href="#contacto" style="color:var(--muted)">Contacto</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
+  <main class="container" role="main">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="hero-left">
         <span class="eyebadge">Extensiones & Volúmenes</span>
-        <h1>Realza la mirada con elegancia y cuidado</h1>
+        <h1 id="hero-title">Realza la mirada con elegancia y cuidado</h1>
         <p class="lead">Soy Martina, técnica especializada en extensiones de pestañas. Ofrezco diseños personalizados, técnicas seguras y resultados duraderos respetando siempre la salud natural del párpado.</p>
         <div class="cta-row">
-          <button class="btn btn-primary" onclick="openWhatsApp()"><i class="fa-brands fa-whatsapp"></i> Reservar turno</button>
+          <!-- boton principal: abre WhatsApp con texto básico, luego el formulario envía el detalle -->
+          <button class="btn btn-primary" type="button" onclick="openWhatsAppQuick()" aria-label="Reservar turno por WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Reservar turno</button>
           <a class="btn btn-outline" href="#portfolio">Ver portfolio</a>
         </div>
-        <div style="margin-top:16px;color:var(--muted);font-size:14px">Atención personalizada, protocolo higiénico y materiales premium.</div>
+        <div style="margin-top:14px;color:var(--muted);font-size:14px">Atención personalizada, protocolo higiénico y materiales premium.</div>
       </div>
-      <div class="hero-right">
+
+      <div class="hero-right" aria-hidden="true">
         <div class="card-preview">
           <div class="profile-img">Martina</div>
           <div style="margin-top:18px;text-align:center">
@@ -109,47 +131,59 @@
       </div>
     </section>
 
-    <section id="servicios" class="services">
-      <div style="display:flex;justify-content:space-between;align-items:end"><h2>Servicios</h2><div style="color:var(--muted)">Tratamientos con foco en salud y resultado</div></div>
+    <section id="servicios" class="services" aria-labelledby="servicios-title">
+      <div style="display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap">
+        <h2 id="servicios-title">Servicios</h2>
+        <div style="color:var(--muted)">Tratamientos con foco en salud y resultado</div>
+      </div>
+
       <div class="grid" style="margin-top:18px">
-        <div class="service">
+        <div class="service" aria-labelledby="srv-classic">
           <div class="caps">CLÁSICO</div>
-          <h3>Extensión clásica</h3>
-          <p class="small">Look natural, ideal para quienes buscan definición sin volumen extra.</p>
+          <h3 id="srv-classic">Extensión clásica</h3>
+          <div class="price">$800 UYU</div>
+          <p class="service-desc">Look natural, ideal para quienes buscan definición sin volumen extra. Duración aproximada: 1.5 - 2 horas.</p>
         </div>
-        <div class="service">
+
+        <div class="service" aria-labelledby="srv-volumen">
           <div class="caps">VOLUMEN</div>
-          <h3>Volumen ruso</h3>
-          <p class="small">Fácil de adaptar: desde volumen ligero hasta dramatic look, cuidando el peso sobre la pestaña natural.</p>
+          <h3 id="srv-volumen">Volumen ruso</h3>
+          <div class="price">$1.600 UYU</div>
+          <p class="service-desc">Desde volumen ligero hasta dramatic look, cuidando el peso sobre la pestaña natural. Duración: 2 - 3 horas.</p>
         </div>
-        <div class="service">
+
+        <div class="service" aria-labelledby="srv-cat">
           <div class="caps">DISEÑO</div>
-          <h3>Cateye & Diseño personalizado</h3>
-          <p class="small">Trabajos a medida según forma del ojo y preferencias de la clienta.</p>
+          <h3 id="srv-cat">Cat-eye / Diseño personalizado</h3>
+          <div class="price">$1.200 UYU</div>
+          <p class="service-desc">Trabajos a medida según forma del ojo y preferencias de la clienta. Incluye asesoría previa.</p>
         </div>
-        <div class="service">
+
+        <div class="service" aria-labelledby="srv-ret">
           <div class="caps">MANTENIMIENTOS</div>
-          <h3>Retoques y consultas</h3>
-          <p class="small">Servicio de colocación y mantenimiento para prolongar el resultado.</p>
+          <h3 id="srv-ret">Retoques y consultas</h3>
+          <div class="price">$450 UYU</div>
+          <p class="service-desc">Servicio de colocación y mantenimiento para prolongar el resultado. Paquetes disponibles.</p>
         </div>
       </div>
     </section>
 
-    <section id="portfolio" class="about">
-      <div>
-        <h2>Portfolio</h2>
+    <section id="portfolio" class="about" aria-labelledby="portfolio-title">
+      <div style="flex:1">
+        <h2 id="portfolio-title">Portfolio</h2>
         <p class="small">Algunas realizaciones y estilos. Puedo presentar portafolio completo en entrevista.</p>
         <div class="grid" style="margin-top:16px">
-          
-          
-          
+          <!-- placeholders: reemplazá por tus imágenes -->
+          <div style="background:#faf5ff;border-radius:10px;padding:14px;text-align:center">Imagen 1</div>
+          <div style="background:#fff8f9;border-radius:10px;padding:14px;text-align:center">Imagen 2</div>
+          <div style="background:#f6fff7;border-radius:10px;padding:14px;text-align:center">Imagen 3</div>
         </div>
       </div>
     </section>
 
-    <section style="padding-top:24px">
-      <div class="testimonials">
-        <h3>Testimonios</h3>
+    <section style="padding-top:20px">
+      <div class="testimonials" aria-labelledby="testi-title">
+        <h3 id="testi-title">Testimonios</h3>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:12px">
           <div class="testimonial">“Excelente atención, mis pestañas nunca lucieron tan naturales.”<div style="margin-top:8px;font-size:13px;color:var(--muted)">— Lucía</div></div>
           <div class="testimonial">“Duración y confort. Recomendada 100%.”<div style="margin-top:8px;font-size:13px;color:var(--muted)">— Ana</div></div>
@@ -157,23 +191,57 @@
       </div>
     </section>
 
-    <section id="contacto" class="contact">
+    <section id="contacto" class="contact" aria-labelledby="contacto-title">
       <div>
-        <h2>Contacto</h2>
-        <form onsubmit="handleForm(event)">\n          <div class="field"><label>Nombre</label><input id="name" placeholder="Tu nombre" required></div>\n          <div class="field"><label>Teléfono / WhatsApp</label><input id="phone" placeholder="Ej: +598 9X XXX XXX" required></div>\n          <div class="field"><label>Servicio</label>\n            <select id="service" required style="padding:10px;border-radius:8px;border:1px solid #e6e6e6">\n              <option value="Extensión clásica">Extensión clásica</option>\n              <option value="Volumen ruso">Volumen ruso</option>\n              <option value="Cat-eye / Diseño personalizado">Cat-eye / Diseño personalizado</option>\n              <option value="Retoque / Mantenimiento">Retoque / Mantenimiento</option>\n            </select>\n          </div>\n          <div class="field"><label>Fecha preferida</label><input id="date" type="date" required></div>\n          <div class="field"><label>Hora preferida</label><input id="time" type="time" required></div>\n          <div class="field"><label>Comentario</label><textarea id="message" placeholder="Algo que quieras contar (alergias, preferencias...)" required></textarea></div>\n          <div style="display:flex;gap:10px;align-items:center"><button type="submit" class="btn btn-primary">Enviar solicitud por WhatsApp</button><div style="color:var(--muted);font-size:13px">O llamá al <strong>+598 98 943 201</strong></div></div>\n        </form>
+        <h2 id="contacto-title">Contacto</h2>
+        <!-- Formulario: no hace POST al servidor, arma texto y abre WhatsApp -->
+        <form id="bookingForm" onsubmit="handleForm(event)" aria-label="Formulario de reserva">
+          <div class="field"><label for="name">Nombre</label><input id="name" name="name" placeholder="Tu nombre" required aria-required="true"></div>
+          <div class="field"><label for="phone">Teléfono / WhatsApp</label><input id="phone" name="phone" placeholder="Ej: +598 9X XXX XXX" required aria-required="true" inputmode="tel" pattern="[\d+\s()-]{6,}"></div>
+
+          <div class="field"><label for="service">Servicio</label>
+            <select id="service" name="service" required aria-required="true" style="padding:10px;border-radius:8px;border:1px solid #e6e6e6">
+              <option value="Extensión clásica">Extensión clásica — $800</option>
+              <option value="Volumen ruso">Volumen ruso — $1.600</option>
+              <option value="Cat-eye / Diseño personalizado">Cat-eye / Diseño personalizado — $1.200</option>
+              <option value="Retoque / Mantenimiento">Retoque / Mantenimiento — $450</option>
+            </select>
+          </div>
+
+          <div class="field" style="display:flex;gap:12px;flex-wrap:wrap">
+            <div style="flex:1;min-width:140px"><label for="date">Fecha preferida</label><input id="date" name="date" type="date" required></div>
+            <div style="min-width:130px"><label for="time">Hora preferida</label><input id="time" name="time" type="time" required></div>
+          </div>
+
+          <div class="field"><label for="message">Comentario</label><textarea id="message" name="message" placeholder="Algo que quieras contar (alergias, preferencias...)" required></textarea></div>
+
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+            <button type="submit" class="btn btn-primary">Enviar solicitud por WhatsApp</button>
+            <div style="color:var(--muted);font-size:13px">O llamá al <strong>+598 98 943 201</strong></div>
+          </div>
+        </form>
       </div>
-      <aside class="contact-card">
-        <h3>Perfect Glance</h3>
-        <p style="margin:8px 0">Martina — Especialista en extensiones</p>
+
+      <aside class="contact-card" aria-labelledby="info-title">
+        <h3 id="info-title">Perfect Glance</h3>
+        <p style="margin:6px 0">Martina — Especialista en extensiones</p>
         <p style="margin:6px 0;font-weight:700">+598 98 943 201</p>
         <p style="margin:6px 0">@perfectglance</p>
-        <div style="margin-top:12px"><a href="https://www.instagram.com/perfectglance" target="_blank" style="color:white;text-decoration:none">Ver Instagram <i class="fa-brands fa-instagram"></i></a></div>
+
+        <div style="width:100%;margin-top:6px">
+          <!-- Mapa embebido: actualmente busca Montevideo (reemplazá query con tu dirección exacta si querés) -->
+          <iframe class="map-embed" title="Mapa Perfect Glance" src="https://www.google.com/maps?q=Montevideo,+Uruguay&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div style="margin-top:8px">
+          <a href="https://www.instagram.com/perfectglance" target="_blank" rel="noopener noreferrer" style="color:white;text-decoration:none">Ver Instagram <i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+        </div>
       </aside>
     </section>
 
   </main>
 
-  <footer class="container">
+  <footer class="container" role="contentinfo">
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
       <div>© <strong>Perfect Glance</strong> — Extensiones de pestañas</div>
       <div style="color:var(--muted);font-size:13px">Diseño por Perfect Glance</div>
@@ -181,20 +249,66 @@
   </footer>
 
   <script>
-    function openWhatsApp(){
-      const number = '+59898943201';
-      const text = encodeURIComponent('Hola, quiero reservar turno para extensiones de pestañas.\nNombre: \nPreferencia de servicio:');
-      window.open('https://wa.me/' + number.replace(/[^0-9]/g,'') + '?text=' + text,'_blank')
+    /* Número principal (guardalo tal cual y usa solo dígitos para wa.me) */
+    const WHATSAPP_NUMBER = '+598 98 943 201';
+
+    function digitsOnly(number){
+      return (number || '').toString().replace(/[^0-9]/g,'');
     }
+
+    /* Botón rápido: abre WhatsApp con texto base para reservar (sin detalles) */
+    function openWhatsAppQuick(){
+      const number = digitsOnly(WHATSAPP_NUMBER);
+      const text = encodeURIComponent('Hola, quiero reservar un turno para extensiones de pestañas. ¿Tenés disponibilidad?');
+      window.open('https://wa.me/' + number + '?text=' + text, '_blank', 'noopener');
+    }
+
+    /* Maneja el formulario: arma mensaje completo y abre WhatsApp */
     function handleForm(e){
       e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const msg = document.getElementById('message').value.trim();
-      const number = '+59898943201'.replace(/[^0-9]/g,'');
-      const text = encodeURIComponent(`Hola, soy ${name}. ${phone ? 'Mi teléfono: '+phone+'. ' : ''}${msg}`);
-      window.open('https://wa.me/' + number + '?text=' + text,'_blank')
+      const form = document.getElementById('bookingForm');
+      const name = (form.querySelector('#name').value || '').trim();
+      const phone = (form.querySelector('#phone').value || '').trim();
+      const service = (form.querySelector('#service').value || '').trim();
+      const date = (form.querySelector('#date').value || '').trim();
+      const time = (form.querySelector('#time').value || '').trim();
+      const message = (form.querySelector('#message').value || '').trim();
+
+      // Construir texto amigable
+      let text = `Hola, soy ${name}. `;
+      if(phone) text += `Mi teléfono: ${phone}. `;
+      text += `Quisiera reservar: ${service}. `;
+      if(date) text += `Fecha: ${date}. `;
+      if(time) text += `Hora: ${time}. `;
+      if(message) text += `Comentario: ${message}.`;
+      // Asegurarse de codificar correctamente
+      const encoded = encodeURIComponent(text);
+
+      const number = digitsOnly(WHATSAPP_NUMBER);
+      // Abrir en nueva pestaña correctamente (antes había un salto de línea que rompía la cadena)
+      window.open('https://wa.me/' + number + '?text=' + encoded, '_blank', 'noopener');
     }
+
+    // (Opcional) evitar envíos por enter indeseados y mejorar accesibilidad
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('bookingForm');
+      // set min date today for date input
+      const dateInput = document.getElementById('date');
+      if(dateInput){
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth()+1).padStart(2,'0');
+        const dd = String(today.getDate()).padStart(2,'0');
+        dateInput.min = `${yyyy}-${mm}-${dd}`;
+      }
+      form.addEventListener('keypress', (ev) => {
+        if(ev.key === 'Enter' && ev.target.tagName !== 'TEXTAREA'){
+          // permitir enter dentro de textarea, evitar submit accidental
+          ev.preventDefault();
+        }
+      });
+    });
   </script>
 </body>
 </html>
+
